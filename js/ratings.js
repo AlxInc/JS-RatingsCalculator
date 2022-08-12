@@ -22,7 +22,8 @@ function collect_ratings() {
     return ratings;
 }
 
-document.addEventListener('change' event =>
-const ratings = event
-id.querySelector(average = ratings.average, 2)
-)
+
+document.addEventListener('change' => {
+    const ratings = collect_ratings()
+    id.querySelector(average = ratings.average, 2)
+});
