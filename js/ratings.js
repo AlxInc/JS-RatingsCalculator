@@ -1,22 +1,22 @@
 function collect_ratings() {
-    const ratings = Object.create();
-    ratings.count = 0;
-    ratings.sum = 0;
-    ratings.average = 0;
+    const ratings = { 
+    'count': 0,
+    'sum': 0,
+    'average': 0};
 
     let rating = 0;
-    const elements = [document.querySelectorAll('rating')];
-    elements.array.forEach(element => {
-        element.id = "star".replace("");
-        rating = parseInt("");
-        parseInt(element.value, ratings.count++);
-        Object.ratings.sum = parseInt(element.value * rating);;
+
+    const elements = document.querySelectorAll('rating');
+    elements.forEach(element => {
+        rating = parseInt(element.id.replace("star".""));
+        rating.count += parseInt(element.value);
+        ratings.sum += parseInt(element.value) * rating
         });
     
       
 
-    if (ratings.count != 0) {
-        ratings.average = sum / count;
+    if (ratings.count !== 0) {
+        ratings.average = ratings.sum / ratings.count;
         
     }
 
@@ -24,7 +24,7 @@ function collect_ratings() {
 }
 
 
-document.addEventListener('change', document =>  {
+document.addEventListener('change', () =>  {
     const ratings = collect_ratings();
-    id.querySelector(average = ratings.average, 2);
+    document.querySelector('#average').value = ratings.average.toFixed(2);
     });
